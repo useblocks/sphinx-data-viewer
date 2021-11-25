@@ -1,3 +1,4 @@
+import json
 import os
 
 from docutils import nodes
@@ -10,24 +11,63 @@ from sphinx.util.osutil import copyfile
 from sphinx_data_viewer.version import VERSION
 
 
+class DataViewerNode(nodes.General, nodes.Element):
+    pass
+
+
 class DataViewerDirective(Directive):
     has_content = True
+    optional_arguments = 1
+    final_argument_whitespace = True
 
     option_spec = {
         "file": directives.unchanged,
         "data": directives.unchanged
     }
 
-    def run(self):
-        container = nodes.container(classes=['sphinx-data-viewer'])
-        title = nodes.paragraph("", "Cool title")
+    def __init__(self, *args, **kw):
+        super().__init__(*args, **kw)
 
-        container.append(title)
+    def run(self):
+        env = self.state.document.settings.env
+        data_string = "\n".join(self.content)
+
+        data_option = self.options.get('data', None)
+        if data_option:
+            if data_option in env.config['data_viewer_data']:
+                data_string = json.dumps(env.config['data_viewer_data'][data_option])
+
+        file_option = self.options.get('file', None)
+        if file_option:
+            if not os.path.isabs(file_option):
+                file_dir = os.path.dirname(self.state.document.current_source)
+                file_option = os.path.join(file_dir, file_option)
+            with open(file_option) as file_obj:
+                # we load the data as json to be sure that it is really json data.
+                data_string = json.dumps(json.load(file_obj))
+
+
+        container = nodes.container(classes=['sphinx-data-viewer'])
+        data_container = DataViewerNode(classes=['sdv-data'])
+        data_container["data"] = data_string
+
+        try:
+            title = self.arguments[0]
+        except IndexError:
+            title = ''
+        data_container["title"] = title
+
+        container.append(data_container)
+
         return [container]
 
 
 def setup(app):
+    app.add_config_value('data_viewer_data', {}, 'html')
+    app.add_node(DataViewerNode, html=(html_visit, html_depart))
     app.add_directive("data-viewer", DataViewerDirective)
+
+
     app.connect("env-updated", install_lib_static_files)
 
     return {
@@ -36,6 +76,15 @@ def setup(app):
         "parallel_write_safe": True,
     }
 
+
+def html_visit(self, node):
+    self.body.append(f"<p>{node.attributes['title']}</p>")
+    self.body.append(f"<div class='{','.join(node.attributes['classes'])}' data-sdv='{node.attributes['data']}'></div>")
+
+
+def html_depart(self, node):
+    # self.body.append("</div>")
+    pass
 
 def install_lib_static_files(app, env):
     # Add js / css files to the final project

@@ -31,6 +31,15 @@ extensions = [
     "sphinx_data_viewer"
 ]
 
+data_viewer_data = {
+    "my_data": {
+        "name": "awesome man",
+        "test": "test",
+        "list": [1,2,3,4.5]
+    }
+
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
