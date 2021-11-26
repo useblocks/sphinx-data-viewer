@@ -22,7 +22,9 @@ class DataViewerDirective(Directive):
 
     option_spec = {
         "file": directives.unchanged,
-        "data": directives.unchanged
+        "data": directives.unchanged,
+        "title": directives.unchanged,
+        "expand": directives.flag
     }
 
     def __init__(self, *args, **kw):
@@ -31,6 +33,8 @@ class DataViewerDirective(Directive):
     def run(self):
         env = self.state.document.settings.env
         data_string = "\n".join(self.content)
+
+        data_expand = True if self.options.get('expand', False) is None else False
 
         data_option = self.options.get('data', None)
         if data_option:
@@ -50,12 +54,8 @@ class DataViewerDirective(Directive):
         container = nodes.container(classes=['sphinx-data-viewer'])
         data_container = DataViewerNode(classes=['sdv-data'])
         data_container["data"] = data_string
-
-        try:
-            title = self.arguments[0]
-        except IndexError:
-            title = ''
-        data_container["title"] = title
+        data_container["expand"] = data_expand
+        data_container["title"] = self.options.get('title', '')
 
         container.append(data_container)
 
@@ -79,11 +79,12 @@ def setup(app):
 
 def html_visit(self, node):
     self.body.append(f"<p>{node.attributes['title']}</p>")
-    self.body.append(f"<div class='{','.join(node.attributes['classes'])}' data-sdv='{node.attributes['data']}'></div>")
+    self.body.append(f"<div class='{','.join(node.attributes['classes'])}' "
+                     f"data-sdv='{node.attributes['data']}'"
+                     f"data-expand={node.attributes['expand']}> </div>")
 
 
 def html_depart(self, node):
-    # self.body.append("</div>")
     pass
 
 def install_lib_static_files(app, env):
