@@ -115,7 +115,11 @@ def install_lib_static_files(app, env):
         dest_path = os.path.join(static_path, extra_file)
         copyfile(extra_path, dest_path)
 
+        builder_static_path = os.path.join(app.builder.outdir, '_static')
+        web_path = dest_path.replace(builder_static_path, '')
+        if web_path.startswith('/'):
+            web_path = web_path[1:]
         if extra_path.endswith('js'):
-            app.add_js_file(str(extra_path))
+            app.add_js_file(str(web_path))
         elif extra_path.endswith('css'):
-            app.add_css_file(str(extra_path))
+            app.add_css_file(str(web_path))
