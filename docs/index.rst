@@ -10,6 +10,7 @@ list-view on HTML pages.
       "Peter Meister": {
          "firstname": "Peter",
          "surname": "Meister",
+         "is_female": false,
          "city": "Munich",
          "age": 26,
          "height_m": 1.86,
@@ -18,6 +19,7 @@ list-view on HTML pages.
       "Sandra Wilson": {
          "firstname": "Sandra",
          "surname": "Wilson",
+         "is_female": true,
          "city": "London",
          "age": 32,
          "height_m": 1.67,
