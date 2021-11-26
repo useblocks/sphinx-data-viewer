@@ -35,22 +35,24 @@ list-view on HTML pages.
          :expand:
 
          {
-            "Peter Meister": {
-               "firstname": "Peter",
-               "surname": "Meister",
-               "city": "Munich",
-               "age": 26,
-               "height_m": 1.86
-               "nicknames": ["Peti", "Pet", "Bomber"]
-            },
-            "Sandra Wilson": {
-               "firstname": "Sandra",
-               "surname": "Wilson",
-               "city": "London",
-               "age": 32,
-               "height_m": 1.67
-               "nicknames": ["Sandy", "Wilma"]
-            }
+           "Peter Meister": {
+             "firstname": "Peter",
+             "surname": "Meister",
+             "is_female": false,
+             "city": "Munich",
+             "age": 26,
+             "height_m": 1.86,
+             "nicknames": ["Peti", "Pet", "Bomber"]
+           },
+           "Sandra Wilson": {
+             "firstname": "Sandra",
+             "surname": "Wilson",
+             "is_female": true,
+             "city": "London",
+             "age": 32,
+             "height_m": 1.67,
+             "nicknames": ["Sandy", "Wilma"]
+           }
          }
 
 Supports data from ``data-viewer`` content, files or variables from a ``conf.py`` configuration.
