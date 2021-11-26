@@ -161,7 +161,7 @@ Default: False (not set)
 
 file
 ~~~~
-Use ``file`` to load data from a file.Data
+Use ``file`` to load data from a file.
 
 ``file`` takes an absolute or relative path.
 If it is relative, an absolut path gets calculated based on current document path.
@@ -256,8 +256,7 @@ If the JavaScript code detects problems, some error text gets printed on the web
 
 Works well with...
 ------------------
-Here some ideas and examples, how ``data-viewer`` could be used together with other Sphinx extensions.
-
+Here are some ideas and examples, how ``data-viewer`` could be used together with other Sphinx extensions.
 
 Sphinx-Needs
 ~~~~~~~~~~~~
