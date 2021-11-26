@@ -1,12 +1,7 @@
-.. Sphinx-Data-Viewer documentation master file, created by
-   sphinx-quickstart on Thu Nov 25 13:33:15 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Sphinx-Data-Viewer
 ==================
 A simple data viewer for data of type json or python object, which shows the data in an interactive
-tree-view on HTML pages.
+list-view on HTML pages.
 
 .. data-viewer::
    :expand:
@@ -62,6 +57,19 @@ Supports data from ``data-viewer`` content, files or variables from a ``conf.py`
 
 .. contents::
    :local:
+
+Installation
+------------
+Use ``pip`` to install ``Sphinx-Data-Viewer``::
+
+   pip install sphinx-data-viewer
+
+Then add it to the extensions of your ``conf.py`` file::
+
+   extensions = [
+       "sphinx_data_viewer",
+   ]
+
 
 Options
 -------
