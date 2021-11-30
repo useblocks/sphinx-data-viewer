@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sphinx-data-viewer"
-version = "0.1.1"
+version = "0.1.2"
 description = "Sphinx extension to show dta in an interacitve list view"
 authors = ["team useblocks"]
 license = "MIT"
