@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  // get json data
-  const data2 = '{"name": "json-view","version": "1.0.0"}';
-
-
   $("div.sdv-data").each(function(index){
     let data = $(this).attr('data-sdv')
     let expand = $(this).attr('data-expand')

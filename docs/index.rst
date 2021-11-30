@@ -377,16 +377,28 @@ This software project is released under the MIT license.
 See `LICENSE file <https://github.com/useblocks/sphinx-data-viewer/blob/main/LICENSE>`_ for more details.
 
 
+API
+---
+
+.. automodule:: sphinx_data_viewer.api
+   :members:
+
 Kudos
 -----
 The javascript code is based on the wonderful work of https://github.com/pgrabovets/json-view.
 
 Changelog
 ---------
+0.1.2
+~~~~~
+:released: under development
 
 0.1.1
 ~~~~~
-:released: under development
+:released: 30.11.2021
+
+* Improvement: Provides API
+* Improvement: Restructured code
 
 0.1.0
 ~~~~~
@@ -396,3 +408,4 @@ Changelog
 * Improvement: Options added: file, title, data, expand
 
 .. toctree::
+   :hidden:
