@@ -37,7 +37,7 @@ def install_lib_static_files(app, env):
     for extra_file in extra_files:
         extra_path = os.path.join(this_path, extra_file)
         extra_dir = os.path.dirname(extra_path).replace(this_path, '')
-        if extra_dir.startswith('/'):
+        if extra_dir.startswith(os.path.sep):
             extra_dir = extra_dir[1:]
         if not os.path.exists(extra_path):
             raise FileNotFoundError(f'Not found: {extra_path}')
