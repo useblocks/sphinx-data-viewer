@@ -1,4 +1,5 @@
 import os
+import platform
 
 from sphinx.util.osutil import copyfile
 
@@ -35,9 +36,13 @@ def install_lib_static_files(app, env):
         pass
 
     for extra_file in extra_files:
+        # Change os specific folder separator
+        if platform.system() == "Windows":
+            extra_file.replace('/', '\\')
+
         extra_path = os.path.join(this_path, extra_file)
         extra_dir = os.path.dirname(extra_path).replace(this_path, '')
-        if extra_dir.startswith('/'):
+        if extra_dir.startswith(os.path.sep):
             extra_dir = extra_dir[1:]
         if not os.path.exists(extra_path):
             raise FileNotFoundError(f'Not found: {extra_path}')
@@ -53,7 +58,7 @@ def install_lib_static_files(app, env):
 
         builder_static_path = os.path.join(app.builder.outdir, '_static')
         web_path = dest_path.replace(builder_static_path, '')
-        if web_path.startswith('/'):
+        if web_path.startswith(os.path.sep):
             web_path = web_path[1:]
         if extra_path.endswith('js'):
             app.add_js_file(str(web_path))
