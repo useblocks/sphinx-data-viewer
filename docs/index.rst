@@ -393,6 +393,9 @@ Changelog
 ~~~~~
 :released: under development
 
+* Bugfix: Fixed wrong handling of windows path.
+  (`#2 <https://github.com/useblocks/sphinx-data-viewer/issues/2>`_)
+
 0.1.1
 ~~~~~
 :released: 30.11.2021
