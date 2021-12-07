@@ -389,9 +389,13 @@ The javascript code is based on the wonderful work of https://github.com/pgrabov
 
 Changelog
 ---------
-0.1.2
+0.1.3
 ~~~~~
 :released: under development
+
+0.1.2
+~~~~~
+:released: 07.12.2021
 
 * Bugfix: Fixed wrong handling of windows path.
   (`#2 <https://github.com/useblocks/sphinx-data-viewer/issues/2>`_)
