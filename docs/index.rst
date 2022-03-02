@@ -393,6 +393,8 @@ Changelog
 ~~~~~
 :released: under development
 
+* Bugfix: Avoids multiple registration of the same CSS/JS file.
+
 0.1.2
 ~~~~~
 :released: 07.12.2021
