@@ -10,10 +10,12 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
 
+sys.path.append(os.path.abspath("."))   # Example if `ub_theme` folder is in the same folder as the `conf.py` file
+
+from ub_theme.conf import ub_html_theme_options
 
 # -- Project information -----------------------------------------------------
 
@@ -29,8 +31,11 @@ author = 'team useblocks'
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx_data_viewer",
-    "sphinx_panels",
-    "sphinxcontrib.needs"
+    'sphinxcontrib.plantuml',
+    'sphinx_needs',
+    'sphinx_immaterial',
+    'sphinx_design',
+    'sphinx_copybutton'
 ]
 
 data_viewer_data = {
@@ -42,7 +47,7 @@ data_viewer_data = {
 }
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates", "ub_theme/templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -54,34 +59,22 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_immaterial'
+html_title = 'Sphinx-Data-Viewer'
+html_logo = '_static/sphinx-data-viewer-logo.svg'
+html_favicon = '_static/sphinx-data-viewer-logo.svg'
+html_theme_options = ub_html_theme_options
+other_options = {
+    "repo_url": "https://github.com/useblocks/sphinx-data-viewer",
+    "repo_name": "sphinx-data-viewer",
+    "repo_type": "github",
+}
+html_theme_options.update(other_options)
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 
-html_theme_options = {
-    'logo': 'sphinx-data-viewer-logo.png',
-    'logo_name': False,
-    # 'description': "an extension for sphinx",
-    'logo_text_align': "center",
-    'github_user': 'useblocks',
-    'github_repo': 'sphinx-data-viewer',
-    'github_banner': True,
-    'github_button': True,
-    'github_type': 'star',
-    'fixed_sidebar': True,
-    'extra_nav_links': {'PyPi': "https://pypi.python.org/pypi/sphinx-dataa-viewer",
-                        'github': "https://github.com/useblocks/sphinx-dataa-viewer",
-                        }
-}
-
-html_sidebars = {
-    '**': [
-        'about.html',
-        # 'navigation.html', # Reactivate if subpages get added
-        'relations.html',
-        'searchbox.html',
-    ]
-}
+html_static_path = ["_static", "ub_theme/css", "ub_theme/js"]
+html_css_files = ["ub-theme.css", "custom.css"]
+html_js_files = ["ub-theme.js"]

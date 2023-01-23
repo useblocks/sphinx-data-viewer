@@ -1,3 +1,10 @@
+.. image:: _static/sphinx-data-viewer-logo.svg
+   :align: center
+   :width: 200px
+   :height: 200px
+
+|
+
 Sphinx-Data-Viewer
 ==================
 A simple data viewer for data of type json or python object, which shows the data in an interactive
@@ -57,18 +64,18 @@ list-view on HTML pages.
 
 Supports data from ``data-viewer`` content, files or variables from a ``conf.py`` configuration.
 
-**Page content**
-
-.. contents::
-   :local:
-
 Installation
 ------------
-Use ``pip`` to install ``Sphinx-Data-Viewer``::
+Use ``pip`` to install ``Sphinx-Data-Viewer``
+
+.. code-block:: python
 
    pip install sphinx-data-viewer
 
-Then add it to the extensions of your ``conf.py`` file::
+Then add it to the extensions of your ``conf.py`` file
+
+.. code-block:: python
+
 
    extensions = [
        "sphinx_data_viewer",
@@ -84,21 +91,23 @@ Sets a title in front of the data representation.
 
 Default: None
 
-.. tabbed:: Code
+.. tab-set::
 
-   .. code-block:: rst
-
-      .. data-viewer::
-         :title: My first data viewer example
-
-         ["apple", "orange", "banana"]
-
-.. tabbed:: Result
-
-   .. data-viewer::
-      :title: My first data viewer example
-
-      ["apple", "orange", "banana"]
+    .. tab-item:: Code
+    
+       .. code-block:: rst
+    
+          .. data-viewer::
+             :title: My first data viewer example
+    
+             ["apple", "orange", "banana"]
+    
+    .. tab-item:: Result
+    
+       .. data-viewer::
+          :title: My first data viewer example
+    
+          ["apple", "orange", "banana"]
 
 expand
 ~~~~~~
@@ -108,56 +117,58 @@ Use ``expand`` to show the complete data.
 
 Default: False (not set)
 
-.. tabbed:: Code
+.. tab-set::
 
-   .. code-block:: rst
-
-      .. data-viewer::
-         :expand:
-
-         {
-            "Peter Meister": {
-               "firstname": "Peter",
-               "surname": "Meister",
-               "city": "Munich",
-               "age": 26,
-               "height_m": 1.86,
-               "nicknames": ["Peti", "Pet", "Bomber"]
-            },
-            "Sandra Wilson": {
-               "firstname": "Sandra",
-               "surname": "Wilson",
-               "city": "London",
-               "age": 32,
-               "height_m": 1.67,
-               "nicknames": ["Sandy", "Wilma"]
-            }
-         }
-
-.. tabbed:: Result
-
-   .. data-viewer::
-      :expand:
-
-      {
-         "Peter Meister": {
-            "firstname": "Peter",
-            "surname": "Meister",
-            "city": "Munich",
-            "age": 26,
-            "height_m": 1.86,
-            "nicknames": ["Peti", "Pet", "Bomber"]
-         },
-         "Sandra Wilson": {
-            "firstname": "Sandra",
-            "surname": "Wilson",
-            "city": "London",
-            "age": 32,
-            "height_m": 1.67,
-            "nicknames": ["Sandy", "Wilma"]
-         }
-      }
-
+    .. tab-item:: Code
+    
+       .. code-block:: rst
+    
+          .. data-viewer::
+             :expand:
+    
+             {
+                "Peter Meister": {
+                   "firstname": "Peter",
+                   "surname": "Meister",
+                   "city": "Munich",
+                   "age": 26,
+                   "height_m": 1.86,
+                   "nicknames": ["Peti", "Pet", "Bomber"]
+                },
+                "Sandra Wilson": {
+                   "firstname": "Sandra",
+                   "surname": "Wilson",
+                   "city": "London",
+                   "age": 32,
+                   "height_m": 1.67,
+                   "nicknames": ["Sandy", "Wilma"]
+                }
+             }
+    
+    .. tab-item:: Result
+    
+       .. data-viewer::
+          :expand:
+    
+          {
+             "Peter Meister": {
+                "firstname": "Peter",
+                "surname": "Meister",
+                "city": "Munich",
+                "age": 26,
+                "height_m": 1.86,
+                "nicknames": ["Peti", "Pet", "Bomber"]
+             },
+             "Sandra Wilson": {
+                "firstname": "Sandra",
+                "surname": "Wilson",
+                "city": "London",
+                "age": 32,
+                "height_m": 1.67,
+                "nicknames": ["Sandy", "Wilma"]
+             }
+          }
+    
 
 file
 ~~~~
@@ -168,22 +179,24 @@ If it is relative, an absolut path gets calculated based on current document pat
 
 Default: None
 
-.. tabbed:: Code
+.. tab-set::
 
-   .. code-block:: rst
-
-      .. data-viewer::
-         :file: test.json
-
-.. tabbed:: Data
-
-   .. literalinclude:: test.json
-      :language: json
-
-.. tabbed:: Result
-
-   .. data-viewer::
-      :file: test.json
+    .. tab-item:: Code
+    
+       .. code-block:: rst
+    
+          .. data-viewer::
+             :file: test.json
+    
+    .. tab-item:: Data
+    
+       .. literalinclude:: test.json
+          :language: json
+    
+    .. tab-item:: Result
+    
+       .. data-viewer::
+          :file: test.json
 
 
 data
@@ -192,31 +205,33 @@ data
 
 Default: None
 
-.. tabbed:: Code
+.. tab-set::
 
-   .. code-block:: rst
-
-      .. data-viewer::
-         :data: my_data
-
-.. tabbed:: Config
-
-   .. code-block:: rst
-
-      # Inside conf.py
-
-      data_viewer_data = {
-          "my_data": {
-              "name": "Mario",
-              "job": "plumber",
-              "magic_tubes": [2, 7, 23, 43.5]
+    .. tab-item:: Code
+    
+       .. code-block:: rst
+    
+          .. data-viewer::
+             :data: my_data
+    
+    .. tab-item:: Config
+    
+       .. code-block:: rst
+    
+          # Inside conf.py
+    
+          data_viewer_data = {
+              "my_data": {
+                  "name": "Mario",
+                  "job": "plumber",
+                  "magic_tubes": [2, 7, 23, 43.5]
+              }
           }
-      }
-
-.. tabbed:: Result
-
-   .. data-viewer::
-      :data: my_data
+    
+    .. tab-item:: Result
+    
+       .. data-viewer::
+          :data: my_data
 
 Errors
 ------
@@ -230,29 +245,31 @@ Parsing exception can happen during Sphinx-Build and in the used JavaScript code
 
 If the JavaScript code detects problems, some error text gets printed on the webpage.
 
-.. tabbed:: Result
+.. tab-set::
 
-   Problem: Missing ``,`` after ``"Peter"``
-
-    .. data-viewer::
-
-      {
-        "name": "Peter"
-        "user": "peterbomber"
-      }
-
-.. tabbed:: Code
-
-   .. code-block:: rst
-
-      Problem: Missing `,` after `"Peter"`
-
-      .. data-viewer::
-
-         {
-           "name": "Peter"
-           "user": "peterbomber"
-         }
+    .. tab-item:: Result
+    
+       Problem: Missing ``,`` after ``"Peter"``
+    
+        .. data-viewer::
+    
+          {
+            "name": "Peter"
+            "user": "peterbomber"
+          }
+    
+    .. tab-item:: Code
+    
+       .. code-block:: rst
+    
+          Problem: Missing `,` after `"Peter"`
+    
+          .. data-viewer::
+    
+             {
+               "name": "Peter"
+               "user": "peterbomber"
+             }
 
 Works well with...
 ------------------
@@ -263,112 +280,120 @@ Sphinx-Needs
 Use `Sphinx-Needs <https://sphinxcontrib-needs.readthedocs.io>`_ to define process elements like requirements and
 specifications. And ``Sphinx-Data-Viewer`` to explain data structures more easily.
 
-.. tabbed:: Result
+.. tab-set::
 
-   .. spec:: /api/user return value
-      :id: SPEC_001
-      :tags: endpoint, user
-      :status: open
+    .. tab-item:: Result
 
-      For our API endpoint ``/api/user`` the default data structure of the return value of a successful GET
-      request shall look like:
+       .. spec:: /api/user return value
+          :id: SPEC_001
+          :tags: endpoint, user
+          :status: open
 
-      .. data-viewer::
-         :expand:
+          For our API endpoint ``/api/user`` the default data structure of the return value of a successful GET
+          request shall look like:
 
-         {
-            "username": "peterbomber",
-            "email": "peterbomber@my_company.net",
-            "active": true
-         }
+          .. data-viewer::
+             :expand:
 
-.. tabbed:: Code
+             {
+                "username": "peterbomber",
+                "email": "peterbomber@my_company.net",
+                "active": true
+             }
 
-   .. code-block::
+    .. tab-item:: Code
+    
+       .. code-block:: rst
+    
+          .. spec:: /api/user return value
+             :id: SPEC_001
+             :tags: endpoint, user
+             :status: open
+    
+             For our API endpoint ``/api/user`` the default data structure of the return value of a successful GET
+             request shall look like:
+    
+             .. data-viewer::
+                :expand:
+    
+                {
+                   "username": "peterbomber",
+                   "email": "peterbomber@my_company.net",
+                   "active": true
+                }
 
-      .. spec:: /api/user return value
-         :id: SPEC_001
-         :tags: endpoint, user
-         :status: open
-
-         For our API endpoint ``/api/user`` the default data structure of the return value of a successful GET
-         request shall look like:
-
-         .. data-viewer::
-            :expand:
-
-            {
-               "username": "peterbomber",
-               "email": "peterbomber@my_company.net",
-               "active": true
-            }
-
-Sphinx-Panels
+Sphinx-Design
 ~~~~~~~~~~~~~
-`Sphinx-Panels <https://sphinx-panels.readthedocs.io>`_ can be used to bring cards, tabs and dropdowns into your
+`Sphinx-Design <https://sphinx-design.readthedocs.io>`_ can be used to bring cards, tabs and dropdowns into your
 documentation. It can help you to show source code or the data-viewer on user requests only.
 
-All the dropdowns and tabs on this side got realised by ``Sphinx-Panels``.
+All the dropdowns and tabs on this side got realised by ``Sphinx-Design``.
 
 Take a look into `the current page source <_sources/index.rst.txt>`_ for a bunch of examples.
 
-.. tabbed:: Result
+.. tab-set::
 
-   .. panels::
+    .. tab-item:: Result
 
-      Data-Viewer 1
-      ^^^^^^^^^^^^^
+       .. grid:: 2
 
-      .. data-viewer::
-         :expand:
+           .. grid-item-card::
 
-         {
-            "name": "Peter",
-            "pets": ["dog", "cat"]
-         }
+              Data-Viewer 1
+              ^^^^^^^^^^^^^
 
-      ---
+              .. data-viewer::
+                 :expand:
 
-      Data-Viewer 2
-      ^^^^^^^^^^^^^
+                 {
+                    "name": "Peter",
+                    "pets": ["dog", "cat"]
+                 }
 
-      .. data-viewer::
-         :expand:
+           .. grid-item-card::
 
-         {
-            "name": "Sandra",
-            "pets": ["squirrel"]
-         }
+              Data-Viewer 2
+              ^^^^^^^^^^^^^
 
-.. tabbed:: Code
+              .. data-viewer::
+                 :expand:
 
-   .. code-block:: rst
+                 {
+                    "name": "Sandra",
+                    "pets": ["squirrel"]
+                 }
 
-      .. panels::
+    .. tab-item:: Code
 
-         Data-Viewer 1
-         ^^^^^^^^^^^^^
+       .. code-block:: rst
 
-         .. data-viewer::
-            :expand:
+           .. grid:: 2
 
-            {
-               "name": "Peter",
-               "pets": ["dog", "cat"]
-            }
+               .. grid-item-card::
 
-         ---
+                  Data-Viewer 1
+                  ^^^^^^^^^^^^^
 
-         Data-Viewer 2
-         ^^^^^^^^^^^^^
+                  .. data-viewer::
+                     :expand:
 
-         .. data-viewer::
-            :expand:
+                     {
+                        "name": "Peter",
+                        "pets": ["dog", "cat"]
+                     }
 
-            {
-               "name": "Sandra",
-               "pets": ["squirrel"]
-            }
+               .. grid-item-card::
+
+                  Data-Viewer 2
+                  ^^^^^^^^^^^^^
+
+                  .. data-viewer::
+                     :expand:
+
+                     {
+                        "name": "Sandra",
+                        "pets": ["squirrel"]
+                     }
 
 License
 -------
@@ -393,6 +418,7 @@ Changelog
 ~~~~~
 :released: under development
 
+* Improvement: Updated project documentation to use the useblocks theme.
 * Bugfix: Avoids multiple registration of the same CSS/JS file.
 
 0.1.2

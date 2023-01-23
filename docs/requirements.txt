@@ -1,3 +1,6 @@
 sphinx
-sphinx-panels
-sphinxcontrib-needs
+sphinx-design
+sphinx-needs
+sphinxcontrib.plantuml
+sphinx-immaterial
+sphinx-copybutton
