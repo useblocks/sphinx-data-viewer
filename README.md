@@ -10,15 +10,18 @@ This repository contains the theme for all Useblock documentation sites.
 ## Installation
 To install the files from this repository, you must have [Git](https://git-scm.com) installed.
 
-* Change directory to your preferred docs working directory
+* Change directory to your root directory if you are in a subdirectory.
+* Add the files from the repository as a dependency to your docs project:
   ```bash
-  cd docs
+  git subtree add --prefix docs/ub_theme/ https://github.com/useblocks/ub_theme.git main --squash
   ```
-* Download the files from the repository:
-  ```bash
-  git clone https://github.com/useblocks/ub_theme.git 
-  ```
-* Delete both the **.git** hidden directory and **.gitignore** hidden file from the **ub_theme** folder.
+
+> **NOTE:** 
+> 
+> You can update the _ub_theme_ repository by using:
+> ```bash
+> git subtree pull --prefix docs/ub_theme/ https://github.com/useblocks/ub_theme.git main --squash
+> ```
 
 ## Configuration
 
@@ -97,6 +100,7 @@ html_js_files = ["ub-theme.js"]
 
 ## Changelog
 
+* 13.02.2023 - Updated README.md and text font to Recursive. Added SUBTREE.md file.
 * 23.01.2023 - Updated CSS for theme, changelog and conf.py
 * 13.01.2023 - Updated CSS stylesheets and docs on how to apply the theme customization.
 * 28.12.2022 - Setup and added the initial Useblocks theme codes. 
