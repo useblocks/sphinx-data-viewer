@@ -11,17 +11,22 @@ This repository contains the theme for all Useblock documentation sites.
 To install the files from this repository, you must have [Git](https://git-scm.com) installed.
 
 * Change directory to your root directory if you are in a subdirectory.
-* Add the files from the repository as a dependency to your docs project:
+* Add the files from this repository (_ub_theme_) as a dependency to your docs project:
   ```bash
   git subtree add --prefix docs/ub_theme/ https://github.com/useblocks/ub_theme.git main --squash
   ```
 
-> **NOTE:** 
-> 
-> You can update the _ub_theme_ repository by using:
-> ```bash
-> git subtree pull --prefix docs/ub_theme/ https://github.com/useblocks/ub_theme.git main --squash
-> ```
+**Updating the _ub_theme_ folder in a documentation project**
+
+You can update the _ub_theme_ repository by running the following command:
+```bash
+git subtree pull --prefix docs/ub_theme/ https://github.com/useblocks/ub_theme.git main --squash
+```
+
+- `git subtree pull`: The `pull` option under `git subtree` allows you to sync changes between the subproject repository and the copy of it in the other documentation project.
+- `--prefix [folder_path]`: The `--prefix` option allows you to set the value for where you want to store the subproject repository files. E.g. **docs/ub_theme**.
+- `https://github.com/useblocks/ub_theme.git main` is the remote repository link and branch you want to copy from.
+- `--squash` is the flag that combines all the commits from the subproject repository into one commit for the parent project repository.
 
 ## Configuration
 
