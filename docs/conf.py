@@ -35,7 +35,8 @@ extensions = [
     'sphinx_needs',
     'sphinx_immaterial',
     'sphinx_design',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    "sphinxcontrib.jquery"
 ]
 
 data_viewer_data = {
