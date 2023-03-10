@@ -11,6 +11,7 @@ documentation = "https://sphinx-data-viewer.readthedocs.io/en/latest/"
 [tool.poetry.dependencies]
 python = "^3.6"
 sphinx = ">=4"
+sphinxcontrib.jquery = ">=3.0.0"
 
 [tool.poetry.dev-dependencies]
 
