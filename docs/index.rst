@@ -414,6 +414,14 @@ The javascript code is based on the wonderful work of https://github.com/pgrabov
 
 Changelog
 ---------
+
+0.1.4
+~~~~~
+:released: under development
+
+* Bugfix: Supporting builders, which do allow to register CSS/JS files (e.g. sphinxcontrib-spelling)
+
+
 0.1.3
 ~~~~~
 :released: 25.1.2024

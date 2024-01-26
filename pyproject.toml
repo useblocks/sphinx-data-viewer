@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sphinx-data-viewer"
-version = "0.1.3"
+version = "0.1.4"
 description = "Sphinx extension to show data in an interactive list view"
 authors = ["team useblocks"]
 license = "MIT"
