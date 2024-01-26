@@ -417,7 +417,7 @@ Changelog
 
 0.1.4
 ~~~~~
-:released: under development
+:released: 25.1.2024
 
 * Bugfix: Supporting builders, which do allow to register CSS/JS files (e.g. sphinxcontrib-spelling)
 
