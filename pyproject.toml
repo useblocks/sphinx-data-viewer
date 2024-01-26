@@ -20,3 +20,10 @@ docs = ["sphinx"]
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+[tool.black]
+target-version = ["py311"]
+preview = true
+force-exclude = '''
+.venv
+'''

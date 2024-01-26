@@ -416,10 +416,10 @@ Changelog
 ---------
 0.1.3
 ~~~~~
-:released: under development
+:released: 25.1.2024
 
 * Improvement: Updated project documentation to use the useblocks theme.
-* Bugfix: Avoids multiple registration of the same CSS/JS file.
+* Bugfix: Avoids multiple registrations of the same CSS/JS file.
 
 0.1.2
 ~~~~~

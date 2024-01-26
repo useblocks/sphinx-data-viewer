@@ -26,7 +26,16 @@ def setup(app):
 
 
 def install_lib_static_files(app, env):
-    # Add js / css files to the final project
+    """Add js / css files to the final project"""
+
+    # Check if the builder is able to register our files.
+    # Some are not, like the Speeling-check builder
+    if not (hasattr(app.builder, "script_files") and hasattr(app.builder, "css_files")):
+        print(
+            "Sphinx-Data-Viewer: Current builder does not support JS/CSS file registration. Skipping...."
+        )
+        return
+
     extra_files = [
         "assets/jsonview.bundle.js",
         "assets/jsonview_loader.js",
@@ -65,7 +74,16 @@ def install_lib_static_files(app, env):
         web_path = dest_path.replace(builder_static_path, "")
         if web_path.startswith(os.path.sep):
             web_path = web_path[1:]
-        if extra_path.endswith("js") and str(web_path) not in app.builder.script_files:
-            app.add_js_file(str(web_path))
-        elif extra_path.endswith("css") and str(web_path) not in app.builder.css_files:
-            app.add_css_file(str(web_path))
+        try:
+            if (
+                extra_path.endswith("js")
+                and str(web_path) not in app.builder.script_files
+            ):
+                app.add_js_file(str(web_path))
+            elif (
+                extra_path.endswith("css")
+                and str(web_path) not in app.builder.css_files
+            ):
+                app.add_css_file(str(web_path))
+        except AttributeError:
+            print(f"Could not register needed JS/CSS file: {extra_file}")
