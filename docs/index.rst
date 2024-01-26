@@ -419,7 +419,7 @@ Changelog
 ~~~~~
 :released: 25.1.2024
 
-* Bugfix: Supporting builders, which do allow to register CSS/JS files (e.g. sphinxcontrib-spelling)
+* Bugfix: Fix for builders, which do not support registration of CSS/JS files (e.g. sphinxcontrib-spelling)
 
 
 0.1.3
