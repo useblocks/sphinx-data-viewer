@@ -1,6 +1,0 @@
-sphinx
-sphinx-design
-sphinx-needs
-sphinxcontrib.plantuml
-sphinx-immaterial
-sphinx-copybutton

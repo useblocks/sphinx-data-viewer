@@ -1,18 +1,12 @@
 /* Data viewer */
 .json-container .json-key {
-    color: var(--md-code-fg-color);
+    color: var(--color-foreground-primary);
 }
 
 .json-container .json-size {
-    color: var(--md-code-hl-number-color);
+    color: var(--color-foreground-muted);
 }
 
-.sd-card {
-    border: 1px solid var(--md-typeset-color);
-}
-.border {
-    border: 1px solid var(--md-typeset-color);
-}
-.sd-card-header {
-    border-bottom: 1px solid var(--md-typeset-color);
+table.need {
+    background-color: transparent;
 }
