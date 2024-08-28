@@ -2,4 +2,4 @@
 
 from sphinx_data_viewer.sphinx_data_viewer import setup  # NOQA
 
-__version__ = "0.2.0"
+__version__ = "0.1.4"
