@@ -26,8 +26,11 @@ jobs:
         # 3.9.8 seems to be broken with type_ast
         # https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1829077.html
         python-version: ["3.8", "3.11"]
-        sphinx-version: ["6.0", "7.0", "8.0"]
+        sphinx-version: ["6.0", "7.0"]
         include:
+          - os: "ubuntu-latest"
+            python-version: "3.11"
+            sphinx-version: "8.0"
           - os: "windows-latest"
             python-version: "3.8"
             sphinx-version: "6.0"
