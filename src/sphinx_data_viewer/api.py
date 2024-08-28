@@ -18,10 +18,9 @@ def get_data_viewer_node(title, data, expand=True):
     """
     viewer_node = DataViewerNode()
 
-    viewer_node['title'] = str(title)
-    viewer_node['data'] = json.dumps(data)
-    viewer_node['expand'] = str(expand)
-    viewer_node['classes'] = ['sdv-data']
+    viewer_node["title"] = str(title)
+    viewer_node["data"] = json.dumps(data)
+    viewer_node["expand"] = str(expand)
+    viewer_node["classes"] = ["sdv-data"]
 
     return viewer_node
-

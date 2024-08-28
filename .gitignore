@@ -16,7 +16,7 @@ _build
 .doctrees
 docs/github_images/
 .eggs/
-docs/_images/need_pie_*.png
+.ruff_cache
 
 .devcontainer/
 .vscode/

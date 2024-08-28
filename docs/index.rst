@@ -1,12 +1,6 @@
-.. image:: _static/sphinx-data-viewer-logo.svg
-   :align: center
-   :width: 200px
-   :height: 200px
-
-|
-
 Sphinx-Data-Viewer
 ==================
+
 A simple data viewer for data of type json or python object, which shows the data in an interactive
 list-view on HTML pages.
 
