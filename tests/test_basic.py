@@ -17,14 +17,17 @@ def test_build(builder: str, tmp_path: Path, make_app: type[SphinxTestApp]):
     It looks like that there are scenarios where this specific build makes trouble but no others.
     """
     tmp_path.joinpath("conf.py").write_text(
-        dedent("""\
+        dedent(
+            """\
         extensions = ["sphinx_data_viewer"]
-        """),
+        """
+        ),
         encoding="utf-8",
     )
     tmp_path.joinpath("test.json").write_text('{"a": [1, 2, 3]}', encoding="utf-8")
     tmp_path.joinpath("index.rst").write_text(
-        dedent("""\
+        dedent(
+            """\
         Title
         =====
                
@@ -35,7 +38,8 @@ def test_build(builder: str, tmp_path: Path, make_app: type[SphinxTestApp]):
                
         .. data-viewer::
             :file: test.json
-        """),
+        """
+        ),
         encoding="utf-8",
     )
 

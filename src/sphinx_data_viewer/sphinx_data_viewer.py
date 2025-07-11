@@ -50,7 +50,10 @@ def install_lib_static_files(app: Sphinx, env) -> None:
     statics_dir = Path(app.builder.outdir) / "_static"
     source_dir = Path(__file__).parent / "assets"
     destination_dir = statics_dir / "sphinx-data-viewer"
-    copy_asset(str(source_dir), str(destination_dir))
+    if sphinx_version >= (8, 0):
+        copy_asset(str(source_dir), str(destination_dir), force=True)
+    else:
+        copy_asset(str(source_dir), str(destination_dir))
 
     lib_path = Path("sphinx-data-viewer")
     _add_js_file(app, lib_path.joinpath("jsonview.bundle.js"))
